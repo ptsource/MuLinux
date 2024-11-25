@@ -31,6 +31,8 @@ pre {
       text-align: justify
 }
 .shshell {
+      padding: 5px;
+      border-radius:10px;
       max-width:100%;
       font-family: 'Inconsolata', monospace;
       background-color: #000;
