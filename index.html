@@ -339,7 +339,42 @@ You can optionally download <a href=mu/misc/MODULES-36.tgz>additional kernel mod
 </TABLE>
 <p>
  Download the Dos installer and tools: <a href=mu/current/DOSTOOLS.zip>DOSTOOLS</a>
-
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    UMSDOS Flavor
+  </TD>
+</TR>
+</TABLE>
+<p>
+UMSDOS (Unix-like File System for DOS) is a filesystem driver that allows Unix-like operating systems, such as Linux, to be run on top of MS-DOS or Windows 9x systems. It was developed to facilitate the use of Linux on systems where a native Linux partition was not feasible. UMSDOS achieves this by using the existing FAT (File Allocation Table) filesystem while providing Unix filesystem features such as long filenames, file permissions, and symbolic links. This enables users to install and run Linux without repartitioning their hard drives. Although UMSDOS was popular in the early days of Linux, it has largely been superseded by more modern filesystems and installation methods.
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    UMSDOS muLinux
+  </TD>
+</TR>
+</TABLE>
+<p>
+For pure DOS computers, you can use the bare <a href="mu/umsdos/mu13r2.zip">zip archive</a>
+<pre class="shshell">
+c:\> pkunzip mu13r2.zip
+</pre>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Run it
+  </TD>
+</TR>
+</TABLE>
+<p>
+As usual, if your system supports loadlin.exe, you can run muLinux
+from Win/DOS with:
+<pre class="shshell">
+c:\> cd c:\linux
+c:\> linux.bat 
+</pre>
 </td>
 </tr>
 </table>
