@@ -499,12 +499,14 @@ UNPACKING THE archives
 mulinux-13r2.tgz and the addons into it.
 2) Unzip DOSTOOLS.zip using pkunzip or equivalent (Winzip).
 
-eg: 
-		c:\mulinux> pkunzip DOSTOOLS.zip
+<pre class="shshell">
+c:\mulinux> pkunzip DOSTOOLS.zip
+</pre>
 
 3) Run unpack.bat
-
-		c:\mulinux> unpack 
+<pre class="shshell">
+c:\mulinux> unpack 
+</pre>
 
 	
   This will unpack the main archive mulinux-13r2.tgz
@@ -513,8 +515,9 @@ METHOD 1: using the Installer Disk (Suggested for WinNT)
 --------------------------------------------------------
 
 a) Run makefi.bat (formerly makefd.bat) in a DOS window:
-
-	c:\mulinux> makefi
+<pre class="shshell">
+c:\mulinux> makefi
+</pre>
 
   This will create the "Installation Disk". It is formatted as
   usual, i.e. 1440k.
@@ -525,9 +528,9 @@ METHOD 2: PC without floppy drive
 ---------------------------------- 
 
 a) Restart in "full DOS mode" and run boot.bat:
-		
-	c:\mulinux> boot 
-
+<pre class="shshell">		
+c:\mulinux> boot 
+</pre>
    Using this method, no InstallerDisk is needed.
 
 METHOD 3: lowmem machine, 386 with RAM < 4M (new!) 
@@ -538,15 +541,17 @@ methods 1 or 2. But if they don't work, try with this.
 
 
 a) Run the maker.bat (make root) script:
-
-	c:\mulinux> maker 
+<pre class="shshell">
+c:\mulinux> maker 
+</pre>
 
    This will create the ROOT (1722k) disk, ext2fs mountable.
    It works only if your floppy drive supports 1722k super-formatting.
 
 b) Run the lowmem.bat script:
-
-	c:\mulinux> lowmem 
+<pre class="shshell">
+c:\mulinux> lowmem 
+</PRE>
 
 This will start Linux and will not use ramdisks at all. This is the
 only script that does not use additional RAM for the filesystem itself. 
