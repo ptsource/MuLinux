@@ -18,6 +18,9 @@ button {
 .wrapper {
 	margin: 30px
 }
+.logo {
+	align:left
+}
 table {
       max-width:100%
 }
@@ -363,6 +366,9 @@ input[type=text] {
         display:inline-block;
         padding:5px;
         width:100%
+    }
+	.logo {
+	   align:center
     }
     .menuwrap {
        width:100%
