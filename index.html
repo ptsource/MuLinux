@@ -25,39 +25,6 @@
 <hr width=90%>
 <table width=100% border=0 cellspacing=10 cellpadding=0>
 <tr align=top>
-<td class="menuwrap">
-<table cellspacing=0 border=0>
-<tr>
-<td><b>Basic Info</b> </td>
-</tr>
-<tr>
-<td>
-<font size=-1>
-&nbsp<img src="mu/img/ball.gif" width=10> <a href="index.html">What's mulinux</a>
-</font>
-</td>
-</tr>
-<td><b>Installation</b> </td>
-</tr>
-<tr>
-<td>
-<font size=-1>
-&nbsp<img src="mu/img/ball.gif" width=10> <a href="install.html">Installation</a>
-</font>
-</td>
-</tr>
-<tr>
-<td><b>Additional</b> </td>
-</tr>
-<tr>
-<td>
-<font size=-1>
-&nbsp<img src="mu/img/ball.gif" width=10> <a href="lepton.html">Lepton Floppy Linux</a>
-</font>
-</td>
-</tr>
-</table>
-</td>
 <td valign=top width=80%>
 <TABLE border="0" width=100%>
 <TR>
@@ -368,6 +335,404 @@ from Win/DOS with:
 c:\> cd c:\linux
 c:\> linux.bat 
 </pre>
+</td>
+</tr>
+</table>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Installation Vs Cloning
+  </TD>
+</TR>
+</TABLE>
+<p>
+The word <em>Installation</em> in muLinux should be not used, because muLinux 
+runs primarily in the RAM, booting from a set of floppy disks (base floppy + add-on).
+<br>
+We reserve the word (<i>installation</i>) in order to describe the 
+process where the images you downloaded are transferred to the floppies
+(see: Linux Install, and Dos Install).
+<br>
+Nevertheless, it can be <em>cloned</em> on  permanent media, such an
+hard-disk. <br> 
+In order to <em>clone</em> muLinux in some <i>destination target machine</i>,
+you must follow these steps:
+
+<ul>
+<li>  create your muLinux Floppy Set, in your <i>source machine</i> (Linux, or Win9x)
+<li> take these floppies to the target machine 
+<li> put floppy #1 in the floppy-drive and reboot the target machine, 
+<li> Soon, you will have your mulinux running in RAM. You now have
+the chance to configure it as you like.
+<li> after your get to the UNIX prompt,
+you must type "clone" on the command line, selecting the type of cloning
+you want. In other words: clone transfer the RAM content, AS-IS, to the HD.
+<li> restart your target computer and start muLinux. This is the single floppy
+instance of muLinux, a very basic UNIX system. During this stage, it
+will ask you if you wish to load additional add-on floppies.
+<li> put remaining add-on floppies into the drive, at request.
+</ul>
+
+<br>
+An interesting feature of muLinux is its possibility to be cloned as UMSDOS. In
+this form it is copied in the c:\linux directory, <i>sharing</i> disk space with Win9x.
+Obviously, this applies only if you have DOS/Win9x in the target machine.
+<br>
+If the target machine has no OS in it, standard Linux EXT2 cloning is available: this
+will reformat your hard-disk with the EXT2 Filesystem and use LILO (linux-loader) in order to boot.
+
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    CD-ROM cloning
+  </TD>
+</TR>
+</TABLE>
+<p>
+
+
+Once you have cloned to the HD, you can re-clone it into a different partition, if you
+like, and can also clone it on a CD-ROM (press "clone" and select "CDROM")
+
+<ul>
+<li> Target machine equiped with a burning-device: mulinux can burn it
+<li> Target machine without a burning-device: follow each step and transport the resulting ISO image to a different machine.   
+</ul>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Direct cloning
+  </TD>
+</TR>
+</TABLE>
+<p>
+This feature is only for Windows installers. After they have followed the installation procedure, they can choose to <i>immediately</i> clone in the
+c:\linux directory, skipping the floppy-disk set creation.
+<br>
+This the only case where the word <i>installatiion</i> may apply with the
+usual meaning.
+
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Installing from a Linux box
+  </TD>
+</TR>
+</TABLE>
+<p>
+
+
+In Linux, you have the script called "mu". Please, obtain help with "mu -h".
+
+<ul>
+<li> mkdir /root/mulinux
+<li> Put your archive (mulinux-13r2.tgz and addons) in /root/mulinux
+<li> cat mulinux-13r2.tgz | gzip -dc | tar -xf-
+<li> Prepare your best floppy-disk (without bad blocks)
+<li> Become root
+<li> "./mu -i"
+
+</ul>
+</p>
+
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+   Installing from a DOS/Win box
+  </TD>
+</TR>
+</TABLE>
+<p>
+<pre>
+Requirements
+-----------------
+You will need:
+
+1) Some 1.44Mb diskettes, formatted OR unformatted, but without bad blocks.
+(1 for the installation disk, 1 for the boot disk and 1 for each addon you
+ wish to configure)
+
+2) DOS, Win3.11, Win95, Win98, WinNT, Win* already installed.
+
+
+
+UNPACKING THE archives
+-----------------------------
+
+1) Create a new directory (eg. c:\mulinux) and move DOSTOOLS.zip,
+mulinux-13r2.tgz and the addons into it.
+2) Unzip DOSTOOLS.zip using pkunzip or equivalent (Winzip).
+
+eg: 
+		c:\mulinux> pkunzip DOSTOOLS.zip
+
+3) Run unpack.bat
+
+		c:\mulinux> unpack 
+
+	
+  This will unpack the main archive mulinux-13r2.tgz
+
+METHOD 1: using the Installer Disk (Suggested for WinNT)
+--------------------------------------------------------
+
+a) Run makefi.bat (formerly makefd.bat) in a DOS window:
+
+	c:\mulinux> makefi
+
+  This will create the "Installation Disk". It is formatted as
+  usual, i.e. 1440k.
+
+b) Put this disk in the drive and reboot 
+
+METHOD 2: PC without floppy drive
+---------------------------------- 
+
+a) Restart in "full DOS mode" and run boot.bat:
+		
+	c:\mulinux> boot 
+
+   Using this method, no InstallerDisk is needed.
+
+METHOD 3: lowmem machine, 386 with RAM < 4M (new!) 
+--------------------------------------------------
+
+Starting from muLinux 11r3, you can install with 4M also using
+methods 1 or 2. But if they don't work, try with this.
+
+
+a) Run the maker.bat (make root) script:
+
+	c:\mulinux> maker 
+
+   This will create the ROOT (1722k) disk, ext2fs mountable.
+   It works only if your floppy drive supports 1722k super-formatting.
+
+b) Run the lowmem.bat script:
+
+	c:\mulinux> lowmem 
+
+This will start Linux and will not use ramdisks at all. This is the
+only script that does not use additional RAM for the filesystem itself. 
+After booting, you will be asked to enter the ROOT floppy: 
+please, enter the floppy you made in a).
+
+NOTE 1: SCSI disks
+-------------------
+
+The installation Disk will also work with SCSI peripherals supported by AIC7xxx series cards, i.e. you can put DOSTOOLS.zip, mulinux.tgz and addons in SCSI partitions or a ZIP floppy with SCSI interface, and run 'makefd'.
+
+NOTE 2: SCSI disks
+-------------------
+
+If you wish only to make the standard single floppy Linux, i.e. the
+boot+root+usr traditional diskette, from DOS, please use
+the "makebru" (make boot,root,usr) script:
+
+		c:\> makebru
+
+It works only if your floppy drive supports 1722k super-formatting.
+
+Anknowledgment
+--------------
+
+Both DOS command, fdformat.exe and rawrite2.exe, are patched versions,
+by Copyright 2000 Miguel Angel Alvarez <maacruz@navegalia.com>
+
+
+Warning
+----------
+
+The installation disk boots an instance of Linux which is used to create
+the various muLinux floppies.
+
+The system should automatically detect the location of the mulinux image files, (however you may be asked to enter the path yourself (eg. /mulinux/)) 
+and you will then be prompted to insert 3.5" high-density floppy disks
+to create the muLinux boot disk and each of the add-on disks in turn.
+
+If you wish to create a permanent Hard-Drive installation, 
+boot muLinux and issue the command "clone" at the prompt.
+</pre>
+</p>
+
+</td>
+
+</tr>
+</table>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    What is Lepton
+  </TD>
+</TR>
+</TABLE>
+<p>
+<table border=0 width=100%>
+<tr align=top>
+<td width="80%">
+<i>Lepton</i> is the temporary name for a single floppy Linux, based on the kernel series 2.4.x.  It is my lab where I do experiment with the framebuffer device in Linux.
+</td>
+</table>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Features
+  </TD>
+</TR>
+</TABLE>
+<p>
+<ul>
+<li> Floppy disk is formatted 1722k, and it is pure, mountable ext2fs
+<li> Kernel is 2.4.18
+<li> Support framebuffer graphics (console 1024x758 and 800x600)
+<li> Using <i>j2</i> and <i>fbppm</i> you can load JPEG images
+<li> It runs enterely in RAM, as usual.
+<li> Filesystems supported: ext2, isofs, vfat, ntfs
+<li> Ethernet networking enabled: 8139too and 3c59x drivers built-in
+<li> Boots using LILO, with full screen bootlogo
+<li> Uses full busybox 0.60 from Debian + my additional BB (rustic busybox)
+<li> Some assembly commands from asmutils
+<li> It is a complete UNIX in the console, with <i>init</i>, shell history,
+multi-console, etc.
+<li> gpm mouse server (the mouse in the console: only PS/2 mice)
+<li> EE assembler text-editor
+<li> Full screen ncurses applications from muLinux: pion (filemanager),
+help (hypertextual help), info (system info)
+<li> Screen Saver framebuffer demo, with flying jpeg.
+<li> MEMTEST utility (new).
+</ul>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+   Bugs
+  </TD>
+</TR>
+</TABLE>
+<p>
+<ul>
+<li>
+Lepton is not user-configurable (yet). 
+<li> At the prompt, you must load your
+preferred keymap with: <code>loadkeys it|us|br|de ... </code>
+<li> Lepton has no memory: it runs in RAM.
+</ul>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Todo
+  </TD>
+</TR>
+</TABLE>
+<p>
+<ul>
+<li> Remove the ncurses library, writing a sort of wrapping library interface versus the framebuffer graphics.
+<li> populate the /usr/doc with a mini-course on UNIX shell and scripting, for my students.
+</ul>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Binaries in the disk
+  </TD>
+</TR>
+</TABLE>
+<p>
+<u>From Debian Busybox</u>
+<pre class="shshell">
+agetty    chroot       dmesg       echo     head      login     pidof     rmmod    tar       uptime
+ar        chvt         domainname  env      hostname  ls        ping      route    tee       vi
+ash       clear        dos2unix    false    id        lsmod     poweroff  sed      tftp      wc
+-ash      cmp          du          fbset    insmod    mkdir     printf    sh       touch     wget
+basename  cp           dumpkmap    find     kill      mknod     ps        sleep    tr        which
+bash      create.kmap  e3          free     killall   mkswap    pwd       sort     true      whoami
+busybox   cut          e3em        gateway  killall5  modprobe  rdate     stty     tty       xargs
+cat       date         e3ne        grep     ln        more      reboot    swapoff  umount    yes
+chgrp     dd           e3pi        gunzip   loadkeys  mount     reset     swapon   uname     zcat
+chmod     df           e3vi        gzip     loadkmap  mv        rm        sync     uniq
+chown     dirname      e3ws        halt     logger    nc        rmdir     tail     unix2dos
+init insmod modprobe
+</pre>
+<u>From Rustic Busybox</u>
+<pre class="shshell">
+ip_broadcast  ip_network  modprobe  msg  scan
+bb         fastdd    fortune    hdparm    ile   mawk    mon     pion      screen_saver  timeout
+chkpasswd  fbppm     fsck.ext2  help      info  md5sum  muawk   poke      setconsole    wave
+crypt      fdformat  ftpget     hexd      j2    miterm  muhex   random    setlevel      xopen
+expr       fdisk     gpm        ifconfig  less  mixer   muless  readchar  time
+</pre>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Download Lepton
+  </TD>
+</TR>
+</TABLE>
+<p>
+<a href=mu/lepton/lepton-0r3.raw> here </a>
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    How to copy Lepton on the floppy disk
+  </TD>
+</TR>
+</TABLE>
+<p>
+<pre class="shshell">
+# fdformat /dev/fd0u1722
+# cat lepton-VERSION.raw > /dev/fd0u1722
+# sync
+</pre>
+You need Linux, for that. DOS/Win9x users can use muLinux (in this case). 
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    UMLinux Virtual Machine
+  </TD>
+</TR>
+</TABLE>
+<p>
+In this demo, you can see (and use it) mulinux-lepton running in a window, in your Netscape environment. To have a 32 bit operating system, such as Linux, running in a window isn't a everyday event.
+<br>
+The demo uses VNC and <a href="http://www.umlinux.de">UMLinux</a> virtual
+machine, and runs on my desktop Linux computer, at this 
+<a href="http://mulinux.dyns.cx:5803/">url</a> (no password required)
+<br>
+If my machine is down, you can see some screenshots, below.<br>
+I will keep the demo active for only a short period, because it is
+resource expensive and I do not know how it will behave if used
+by many users simultaneusly! (it runs a single instance OS)
+<p>
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Screenshots
+  </TD>
+</TR>
+</TABLE>
+<p>
+<img class="img-responsive" src="images/login.png">
+<br />
+<img class="img-responsive" src="images/info.png">
+<TABLE border="0" width=100%>
+<TR>
+  <TD class="titleheader">
+    Download
+  </TD>
+</TR>
+</TABLE>
+<p>
+I made an archive with UMlinux+Lepton setup. You can <a href="mu/misc/umlinux.tgz">download</a> and run it on your system. 
+<br>
+To run this demo you need
+72Mb free space in /tmp and you must run at least a 2.2.15 Linux kernel.
 </td>
 </tr>
 </table>
