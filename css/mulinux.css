@@ -306,7 +306,12 @@ input[type=text] {
 		padding:5px;
         width:100% !important
     }
-	.logo {
+	td img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}
+    .logo {
 	   text-align:center !important
     }
 	.wrapper {
