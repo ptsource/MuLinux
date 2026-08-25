@@ -111,7 +111,10 @@ hr {
     margin-right: auto;
 	}
 	.wrapper {
-	margin-right: 5px !important
+	margin: 2px !important
+	}
+	.titleheader {
+	margin-right: 2px !important
 	}
     .shshell {
 	font-size: 10px;
