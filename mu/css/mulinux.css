@@ -4,7 +4,7 @@ body {
   background-color: #fff;
   font-family: 'Inconsolata', monospace;
   margin:20px;
-  overflow-x:hidden
+  overflow-x:hidden !important
 }
 input,
 select,
