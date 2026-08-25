@@ -19,7 +19,7 @@ button {
 	margin: 30px
 }
 .logo {
-	align:left
+	text-align:left
 }
 table {
       max-width:100%
@@ -303,10 +303,11 @@ input[type=text] {
 @media only screen and (min-width: 0px) and (max-width: 700px) {
     td {
         display:inline-block;
+		padding:5px;
         width:100% !important
     }
 	.logo {
-	   align:center !important
+	   text-align:center !important
     }
 	.wrapper {
 	margin: 5px !important
