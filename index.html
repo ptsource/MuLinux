@@ -501,16 +501,18 @@ c:\mulinux> pkunzip DOSTOOLS.zip
 <pre class="shshell">
 c:\mulinux> unpack 
 </pre>
+<pre>
 This will unpack the main archive mulinux-13r2.tgz
 
 METHOD 1: using the Installer Disk (Suggested for WinNT)
 --------------------------------------------------------
 
 a) Run makefi.bat (formerly makefd.bat) in a DOS window:
+</pre>
 <pre class="shshell">
 c:\mulinux> makefi
 </pre>
-
+<pre>
   This will create the "Installation Disk". It is formatted as
   usual, i.e. 1440k.
 
@@ -520,9 +522,11 @@ METHOD 2: PC without floppy drive
 ---------------------------------- 
 
 a) Restart in "full DOS mode" and run boot.bat:
+</pre>
 <pre class="shshell">
 c:\mulinux> boot 
 </pre>
+<pre>
    Using this method, no InstallerDisk is needed.
 
 METHOD 3: lowmem machine, 386 with RAM < 4M (new!) 
@@ -533,14 +537,16 @@ methods 1 or 2. But if they don't work, try with this.
 
 
 a) Run the maker.bat (make root) script:
+</pre>
 <pre class="shshell">
 c:\mulinux> maker 
 </pre>
-
+<pre>
    This will create the ROOT (1722k) disk, ext2fs mountable.
    It works only if your floppy drive supports 1722k super-formatting.
 
 b) Run the lowmem.bat script:
+</pre>
 <pre class="shshell">
 c:\mulinux> lowmem 
 </PRE>
@@ -565,7 +571,7 @@ the "makebru" (make boot,root,usr) script:
 <pre class="shshell">
 c:\> makebru
 </pre>
-
+<pre>
 It works only if your floppy drive supports 1722k super-formatting.
 
 Warning
@@ -580,6 +586,7 @@ to create the muLinux boot disk and each of the add-on disks in turn.
 
 If you wish to create a permanent Hard-Drive installation, 
 boot muLinux and issue the command "clone" at the prompt.
+</pre>
 </p>
 
 </td>
